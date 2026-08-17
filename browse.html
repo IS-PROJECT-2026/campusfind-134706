@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and search lost and found items on campus">
+  <title>Browse Items | CampusFind</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔍</span>
+        <span>CampusFind</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="browse.html">Browse Items</a></li>
+        <li><a href="report-lost.html">Report Lost</a></li>
+        <li><a href="report-found.html">Report Found</a></li>
+        <li><a href="my-reports.html">My Reports</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Browse Items</h1>
+      <p>Search and filter lost and found items across campus.</p>
+    </div>
+
+    <div class="search-bar">
+      <input type="search" id="search-input" class="form-control" placeholder="Search items... e.g. black HP laptop" aria-label="Search items">
+    </div>
+
+    <form id="filter-form" class="filter-panel" aria-label="Filter items">
+      <h2 class="section-title">Filters</h2>
+      <div class="filter-grid">
+        <div class="form-group">
+          <label for="filter-type">Type</label>
+          <select id="filter-type" name="filter-type" class="form-control">
+            <option value="all">All</option>
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="filter-category">Category</label>
+          <select id="filter-category" name="filter-category" class="form-control">
+            <option value="all">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Documents">Documents</option>
+            <option value="Keys">Keys</option>
+            <option value="Bags">Bags</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="filter-location">Location</label>
+          <select id="filter-location" name="filter-location" class="form-control">
+            <option value="all">All Locations</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="filter-status">Status</label>
+          <select id="filter-status" name="filter-status" class="form-control">
+            <option value="all">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="possible_match">Possible Match</option>
+            <option value="recovered">Recovered</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="filter-date-from">Date From</label>
+          <input type="date" id="filter-date-from" name="filter-date-from" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="filter-date-to">Date To</label>
+          <input type="date" id="filter-date-to" name="filter-date-to" class="form-control">
+        </div>
+      </div>
+      <button type="button" id="clear-filters" class="btn btn-outline btn-sm">Clear Filters</button>
+    </form>
+
+    <p id="results-count" class="card-meta" style="margin-bottom: var(--spacing-lg);"></p>
+    <div id="results"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 CampusFind | Peter Wachira (134706) | Strathmore University</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/matching.js"></script>
+  <script src="js/browse.js"></script>
+</body>
+</html>

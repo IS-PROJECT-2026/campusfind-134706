@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Report a lost item on campus">
+  <title>Report Lost Item | CampusFind</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔍</span>
+        <span>CampusFind</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="browse.html">Browse Items</a></li>
+        <li><a href="report-lost.html">Report Lost</a></li>
+        <li><a href="report-found.html">Report Found</a></li>
+        <li><a href="my-reports.html">My Reports</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>🔴 Report a Lost Item</h1>
+      <p>Fill in the details below to report something you have lost on campus.</p>
+    </div>
+
+    <form id="report-lost-form" class="form-card" novalidate>
+      <div class="form-group">
+        <label for="name">Item Name *</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Black HP Laptop" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" name="category" class="form-control" required></select>
+        </div>
+        <div class="form-group">
+          <label for="location">Location Lost *</label>
+          <input type="text" id="location" name="location" class="form-control" list="location-list" placeholder="e.g. Library" required>
+          <datalist id="location-list"></datalist>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description *</label>
+        <textarea id="description" name="description" class="form-control" placeholder="Describe the item in detail..." required></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Date Lost *</label>
+          <input type="date" id="date" name="date" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact Email *</label>
+          <input type="email" id="contact" name="contact" class="form-control" placeholder="your.email@strathmore.edu" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Item Photo (optional)</label>
+        <input type="file" id="image" name="image" class="form-control" accept="image/*">
+        <p class="hint">Upload a photo to help identify your item.</p>
+        <div id="image-preview" class="image-preview"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Lost Report</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 CampusFind | Peter Wachira (134706) | Strathmore University</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/matching.js"></script>
+  <script src="js/forms.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CampusFindUtils.initNav();
+      CampusFindForms.initReportForm('report-lost-form', 'lost');
+    });
+  </script>
+</body>
+</html>

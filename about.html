@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About CampusFind - Campus Lost and Found System">
+  <title>About | CampusFind</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔍</span>
+        <span>CampusFind</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="browse.html">Browse Items</a></li>
+        <li><a href="report-lost.html">Report Lost</a></li>
+        <li><a href="report-found.html">Report Found</a></li>
+        <li><a href="my-reports.html">My Reports</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>About CampusFind</h1>
+      <p>Learn how the campus lost and found system works.</p>
+    </div>
+
+    <div class="about-content">
+      <h2>What is CampusFind?</h2>
+      <p>CampusFind is a web-based lost-and-found management system designed for university students and staff. It allows users to report lost or found items, browse and search reported items, identify possible matches, and manage the status of their reports.</p>
+
+      <h2>How It Works</h2>
+      <ol style="list-style: decimal; padding-left: var(--spacing-xl); margin-bottom: var(--spacing-lg);">
+        <li style="margin-bottom: var(--spacing-sm);"><strong>Report</strong> — Lost something? Found something? Submit a report with details and optional photo.</li>
+        <li style="margin-bottom: var(--spacing-sm);"><strong>Search</strong> — Browse the catalogue or search by keywords like "black HP laptop".</li>
+        <li style="margin-bottom: var(--spacing-sm);"><strong>Match</strong> — CampusFind automatically detects possible matches between lost and found reports.</li>
+        <li style="margin-bottom: var(--spacing-sm);"><strong>Recover</strong> — Contact the other party and mark items as recovered when returned.</li>
+      </ol>
+
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <h3>Where is my data stored?</h3>
+        <p>All data is stored locally in your browser using localStorage. No server or database is required. Data persists between sessions on the same browser.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How does match detection work?</h3>
+        <p>CampusFind compares lost and found reports based on category, item name keywords, location, and date proximity. When the match score exceeds the threshold, both items are flagged as a possible match.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I delete a report?</h3>
+        <p>Yes. Go to My Reports or the item detail page and use the Delete button. Only reports you created can be managed from your session.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my contact information public?</h3>
+        <p>Your email is visible on item detail pages so others can contact you about potential matches. Only submit contact details you are comfortable sharing.</p>
+      </div>
+
+      <h2>Technologies</h2>
+      <p>CampusFind is built with HTML5, CSS3, and vanilla JavaScript. Data persistence uses the browser localStorage API. The project is deployed via GitHub Pages.</p>
+
+      <h2>Author</h2>
+      <p>Developed by Peter Wachira (Admission No. 134706) as part of the IS Mini-Project Git Workflow Challenge.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 CampusFind | Peter Wachira (134706) | Strathmore University</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CampusFindUtils.initNav();
+    });
+  </script>
+</body>
+</html>
