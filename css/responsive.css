@@ -1,3 +1,7 @@
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
 @media (max-width: 767px) {
   .nav-toggle {
     display: flex;
