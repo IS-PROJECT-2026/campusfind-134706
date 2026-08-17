@@ -115,6 +115,12 @@ const CampusFindForms = (() => {
     });
   }
 
+  function getValidationSummary(errors) {
+    const keys = Object.keys(errors);
+    if (keys.length === 0) return '';
+    return `Please fix ${keys.length} field(s) before submitting.`;
+  }
+
   return {
     populateCategorySelect,
     populateLocationDatalist,
