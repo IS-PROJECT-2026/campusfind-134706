@@ -39,7 +39,7 @@ const CampusFindMatching = (() => {
     if (itemA.location.toLowerCase() === itemB.location.toLowerCase()) score += 20;
     if (daysBetween(itemA.date, itemB.date) <= 3) score += 10;
 
-    return score;
+    return Math.max(0, score);
   }
 
   function findMatchesForItem(item) {
