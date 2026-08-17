@@ -158,27 +158,26 @@ GitHub profile stats cards (powered by github-readme-stats and github-stats-exte
 
 ### Fix
 
-Deployed a self-hosted instance of [github-stats-extended](https://github.com/stats-organization/github-stats-extended) on Vercel:
+Deployed a self-hosted stats solution using [github-readme-stats-action](https://github.com/stats-organization/github-readme-stats-action) in profile repo `pwachira7/pwachira7`:
 
-1. Forked the github-stats-extended repository
-2. Created a GitHub Personal Access Token (classic) with `repo` and `read:user` scopes
-3. Deployed on Vercel with root directory `apps/backend` and environment variable `PAT_1`
-4. Set production branch to `release`
-5. Updated profile README to use the self-hosted Vercel domain instead of the public instance
+1. Created profile README repo with GitHub Actions workflow (`.github/workflows/grs.yml`)
+2. Workflow generates static SVG cards daily into `profile/stats.svg` and `profile/top-langs.svg`
+3. Cards are embedded from the repository itself — not the shared public Vercel instance
+4. Workflow run: https://github.com/pwachira7/pwachira7/actions
 
-This ensures stats cards render reliably from personal infrastructure with dedicated API quota and caching.
+This uses personal GitHub Actions infrastructure with `GITHUB_TOKEN`, avoiding shared API rate limits.
 
 ---
 
 ## 8. Bonus Stat Card
 
-Added a **GitHub Streak Stats** card from [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) — a different open-source tool from github-stats-extended:
+Added a **GitHub Streak Stats** card from [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) (DenverCoder1) — a different open-source tool from github-stats-extended:
 
 ```markdown
-[![GitHub Streak](https://streak-stats.demolab.com/?user=USERNAME&theme=default)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com/?user=pwachira7&theme=default)](https://git.io/streak-stats)
 ```
 
-This displays contribution streak data (current streak, longest streak, total contributions) which is not available in github-stats-extended.
+Profile: https://github.com/pwachira7
 
 ---
 
